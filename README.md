@@ -2,6 +2,7 @@
 
 ## 📚 Table of Contents
 
+```
 🚀 Features
 🏗️ Project Structure
 📦 Main Dependencies
@@ -11,6 +12,7 @@
 📋 Current Status
 🚀 Planned Features
 📖 Usage Examples
+```
 
 ## 🚀 Features
 
