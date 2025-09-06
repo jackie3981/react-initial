@@ -1,9 +1,9 @@
 import "./App.css";
 import TestRequest from "./components/TestRequest";
 import FormExample from "./components/FormExample";
-import Menu from "./components/menu/Menu";
+import Menu from "./components/header/menu/Menu";
 import { Home, Settings, User, Lock } from "lucide-react";
-import Banner from "./components/banner/Banner";
+import Banner from "./components/header/banner/Banner";
 import Clock from "./components/clock/Clock";
 import Weather from "./components/weather/Weather";
 
@@ -39,6 +39,15 @@ const menuItems = [
 function App() {
   return (
     <>
+      <div className="p-6">
+        {/* When the orientation is set to "horizontal," you can omit the parameter, as this is the default orientation. */}
+        <Menu items={menuItems} orientation="horizontal" />
+
+        {/* <div className="mt-8">
+          <h2 className="font-semibold">Vertical Menu:</h2>
+          <Menu items={menuItems} orientation="vertical" />
+        </div> */}
+      </div>
       <Banner
         slides={[
           // {
@@ -74,17 +83,7 @@ function App() {
         ]}
         className="mb-6"
       />
-      <div className="p-6">
-        <h1 className="text-xl font-bold mb-6">Menu Demo</h1>
-        <h2 className="font-semibold">Horizontal Menu:</h2>
-        {/* When the orientation is set to "horizontal," you can omit the parameter, as this is the default orientation. */}
-        <Menu items={menuItems} orientation="vertical" />
 
-        {/* <div className="mt-8">
-          <h2 className="font-semibold">Vertical Menu:</h2>
-          <Menu items={menuItems} orientation="vertical" />
-        </div> */}
-      </div>
       <div className="text-4xl font-bold text-red-500">
         Tailwind is working!
       </div>

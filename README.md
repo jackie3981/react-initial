@@ -1,61 +1,97 @@
 # React + Vite Project Template
 
-This is a React project template using Vite, including essential configurations and base components.
+## 📚 Table of Contents
 
-## 🚀 Features of this initial version
+🚀 Features
+🏗️ Project Structure
+📦 Main Dependencies
+🛠️ Development Tools
+🎯 Component Overview
+⚡ Available Scripts
+📋 Current Status
+🚀 Planned Features
+📖 Usage Examples
 
-### 📦 Main Dependencies
+## 🚀 Features
 
-- **React 19** + **Vite** - Framework and bundler
-- **Tailwind CSS 4** - Styling with full configuration
-- **Axios** - HTTP client for APIs
-- **React Hook Form** - Form handling
-- **Lucide React** - Icons
-- **PropTypes** - Prop validation
+This is a React project template using Vite, including essential configurations and base components with a modern, scalable architecture.
 
-### 🛠 Dev Tools
+## 🏗️ Project Structure
 
-- **ESLint** - Linting with custom configuration
-- **Prettier** - Code formatting
-- **TypeScript types** - Typings for React
-
-### 📁 Organized Structure
+### 📁 Organized Folder Architecture
 
 ```
-src/
-├── components/
-│ ├── menu/ # Modular navigation components
-│ │ ├── Menu.jsx
-│ │ ├── MenuItem.jsx
-│ │ └── SubMenu.jsx
-│ ├── FormExample.jsx # Form example
-│ └── TestRequest.jsx # HTTP request example
-├── lib/
-│ └── axios.js # Axios configuration
-└── assets/ # Static resources
+src/components/
+├── clock/
+│   └── Clock.jsx                 # Standalone clock component
+├── header/                       # All header-related components
+│   ├── banner/                   # Banner carousel system
+│   │   ├── Banner.jsx
+│   │   ├── BannerControls.jsx
+│   │   └── BannerSlide.jsx
+│   ├── ctas/                     # Call-to-action components
+│   ├── menu/                     # Navigation menu system
+│   │   ├── Menu.jsx
+│   │   ├── MenuItem.jsx
+│   │   └── SubMenu.jsx
+│   └── topbar/                   # Top bar components
+├── weather/
+│   └── Weather.jsx               # Standalone weather component
+├── FormExample.jsx               # Form examples
+└── TestRequest.jsx               # API test components
 ```
 
-### 🎨 Implemented Components
+### Benefits of this structure:
 
-#### Menu Component
+✅ Logical grouping by functionality area
+✅ Better scalability for future features
+✅ Clear separation of concerns
+✅ Easier maintenance and team collaboration
+✅ Ready for complex applications
 
-```jsx
-// Modular navigation component with support for:
-- Horizontal/vertical orientation
-- Custom link components (React Router compatible)
-- Styling with Tailwind CSS
-- Prop validation with PropTypes
+## 📦 Main Dependencies
+
+- React 19 + Vite - Framework and bundler
+- Tailwind CSS 4 - Styling with full configuration
+- Axios - HTTP client for APIs
+- React Hook Form - Form handling
+- Lucide React - Icons
+- PropTypes - Prop validation
+
+## 🛠️ Development Tools
+
+- ESLint - Linting with custom configuration
+- Prettier - Code formatting
+- TypeScript types - Typings for React
+
+## 🎯 Component Overview
+
+### Header Components
+
+- Banner System - Full carousel/slideshow with auto-play, navigation controls, and configurable transitions
+- Menu System - Modular navigation component with horizontal/vertical orientation support
+- Topbar - Top bar components (ready for implementation)
+
+### Utility Components
+
+- Clock - Reusable time component with real-time updates
+- Weather - Weather component with API-ready structure
+- FormExample - Form handling examples
+- TestRequest - API testing components
+
+## ⚡ Available Scripts
+
+```
+npm run dev       # Development
+npm run build     # Production build
+npm run lint      # Linting
+npm run format    # Code formatting
+npm run preview   # Production preview
 ```
 
-## Available Scripts
+## 📋 Current Status
 
-npm run dev # Development
-npm run build # Production build
-npm run lint # Linting
-npm run format # Code formatting
-
-Current Status
-Everything functional and configured
+### ✅ Everything Functional and Configured
 
 - Build works without errors
 - Tailwind CSS integrated and working
@@ -63,106 +99,49 @@ Everything functional and configured
 - Modular component structure
 - Usage examples included
 
-### Added Banner Components
+### ✅ Stable Features Implemented:
 
-### 📋 Current Status - Version 1.0
-
-✅ **Implemented and Stable Features:**
-
-- Fully functional base banner
-- System for inserting components (left/center/right)
-- BannerClock with a real-time clock
-- BannerWeather with a basic structure
-- Customizable colors, sizes, and alignment options
-- Support for background images
+- Fully functional banner carousel system
+- Real-time clock component
+- Weather component structure
+- Customizable colors, sizes, and alignment
+- Support for background images with overlays
 - Prop validation using PropTypes
+- Responsive design
 
-### 🚀 Upcoming Planned Improvements
+## 🚀 Planned Features
 
-- [ ] Introduction of a carousel/slideshow system for displaying multiple banners
-- [ ] Implementation of transitions and animations
-- [ ] Integration with a real-time weather API
-- [ ] Addition of more customizable components
-- [ ] Provision of predefined themes and presets
+### Short-term
 
-#### 📂 Banner Components structure
+- Real API integration for Weather component
+- Enhanced slide transition animations
+- Responsive breakpoint configurations
+- Accessibility improvements (ARIA labels)
 
-```
-src/components/banner/
-├── Banner.jsx # Componente principal
-├── BannerClock.jsx # Reloj en tiempo real
-└── BannerWeather.jsx # Widget de clima
-```
+### Medium-term
 
-#### 🎨 Banner Features
+- Theme system support
+- Predefined style presets
+- Internationalization (i18n) support
+- State management integration
 
-- **Fully customizable** – colors, sizes, and alignment
-- **Supports background images** with optional overlays
-- **Grid system** for positioning content elements (left, center, right)
-- **Prop type validation** using PropTypes
-- **Completely responsive**
+### Long-term
 
-#### 💡 How to use it:
+- Additional utility components
+- Advanced form handling examples
+- API caching strategies
+- Performance optimization
 
-```jsx
-import Banner from "./components/banner/Banner";
-import BannerClock from "./components/banner/BannerClock";
-import BannerWeather from "./components/banner/BannerWeather";
+## 📖 Usage Examples
 
-<Banner
-  title="Dashboard Principal"
-  subtitle="Bienvenido al sistema"
-  backgroundColor="bg-blue-600"
-  height="h-48"
-  components={[
-    { element: <BannerClock />, align: "left" },
-    { element: <BannerWeather />, align: "right" }
-  ]}
-/>
-
-⚡ Components included:
-- Banner Clock: A digital clock that automatically updates the time.
-- Banner Weather: A weather information widget ready for API connection.
-```
-
-### 🆕 Latest Updates - Banner System v2
-
-#### 🎯 Enhanced Banner Component with Carousel
-
-**New Features:**
-
-- ✅ **Full carousel/slideshow system** with auto-play
-- ✅ **Navigation controls** (arrows + indicators)
-- ✅ **Flexible text system**: fixed or per-slide text
-- ✅ **Configurable transition** timing and effects
-- ✅ **Improved accessibility** with proper ARIA labels
-
-#### 📂 Updated Component Structure
+### Banner Carousel System
 
 ```
-src/components/
-├── banner/
-│ ├── Banner.jsx # Main carousel container
-│ ├── BannerControls.jsx # Navigation arrows & indicators
-│ └── BannerSlide.jsx # Individual slide component
-├── clock/
-│ └── Clock.jsx # Reusable clock component
-├── weather/
-│ └── Weather.jsx # Reusable weather component
-└── menu/
-├── Menu.jsx
-├── MenuItem.jsx
-└── SubMenu.jsx
-```
-
-#### 🎨 Banner Usage Example
-
-```jsx
-import Banner from "./components/banner/Banner";
+import Banner from "./components/header/banner/Banner";
 import Clock from "./components/clock/Clock";
 import Weather from "./components/weather/Weather";
 
-// With multiple slides
+// Multiple slides with auto-rotation
 <Banner
   slides={[
     { image: "/slide1.jpg", title: "Welcome", subtitle: "First slide" },
@@ -177,25 +156,23 @@ import Weather from "./components/weather/Weather";
   ]}
 />
 
-// With fixed text
+// Fixed text banner
 <Banner
   slides={[{ image: "/hero.jpg" }]}
   textFixed={true}
   title="Fixed Title"
   subtitle="This text appears on all slides"
 />
+```
 
-🔧 Component Features
-- Banner: Main container with auto-rotation, configurable timing
-- BannerControls: Customizable navigation arrows and indicators
-- BannerSlide: Individual slide with transition effects
-- Clock: Reusable time component (can be used anywhere)
-- Weather: Reusable weather component (API-ready structure)
+### Menu Component
 
-🚀 Next Planned Features
-- Real API integration for Weather component
-- Slide transition animations
-- Responsive breakpoint configurations
-- Accessibility improvements
-- Theme system support
+```
+import Menu from "./components/header/menu/Menu";
+
+<Menu
+  items={menuItems}
+  orientation="horizontal"
+  linkComponent={CustomLink}
+/>
 ```
