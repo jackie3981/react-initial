@@ -1,12 +1,57 @@
-# React + Vite
+# React + Vite Project Template
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This is a React project template using Vite, including essential configurations and base components.
 
-Currently, two official plugins are available:
+## 🚀 Features of this initial version
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+### 📦 Main Dependencies
+- **React 19** + **Vite** - Framework and bundler
+- **Tailwind CSS 4** - Styling with full configuration
+- **Axios** - HTTP client for APIs
+- **React Hook Form** - Form handling
+- **Lucide React** - Icons
+- **PropTypes** - Prop validation
 
-## Expanding the ESLint configuration
+### 🛠 Dev Tools
+- **ESLint** - Linting with custom configuration
+- **Prettier** - Code formatting
+- **TypeScript types** - Typings for React
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+### 📁 Organized Structure
+src/
+├── components/
+│ ├── menu/ # Modular navigation components
+│ │ ├── Menu.jsx
+│ │ ├── MenuItem.jsx
+│ │ └── SubMenu.jsx
+│ ├── FormExample.jsx # Form example
+│ └── TestRequest.jsx # HTTP request example
+├── lib/
+│ └── axios.js # Axios configuration
+└── assets/ # Static resources
+
+### 🎨 Implemented Components
+
+#### Menu Component
+```jsx
+// Modular navigation component with support for:
+- Horizontal/vertical orientation
+- Custom link components (React Router compatible)
+- Styling with Tailwind CSS
+- Prop validation with PropTypes
+```
+
+## Available Scripts
+
+npm run dev       # Development
+npm run build     # Production build
+npm run lint      # Linting
+npm run format    # Code formatting
+
+Current Status
+Everything functional and configured
+- Build works without errors
+- Tailwind CSS integrated and working
+- ESLint + Prettier configured
+- Modular component structure
+- Usage examples included
