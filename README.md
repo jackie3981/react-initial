@@ -62,3 +62,65 @@ Everything functional and configured
 - ESLint + Prettier configured
 - Modular component structure
 - Usage examples included
+
+### 🆕 Added Banner Components
+
+### 📋 Current Status - Version 1.0
+
+✅ **Implemented and Stable Features:**
+
+- Fully functional base banner
+- System for inserting components (left/center/right)
+- BannerClock with a real-time clock
+- BannerWeather with a basic structure
+- Customizable colors, sizes, and alignment options
+- Support for background images
+- Prop validation using PropTypes
+
+### 🚀 Upcoming Planned Improvements
+
+- [ ] Introduction of a carousel/slideshow system for displaying multiple banners
+- [ ] Implementation of transitions and animations
+- [ ] Integration with a real-time weather API
+- [ ] Addition of more customizable components
+- [ ] Provision of predefined themes and presets
+
+#### 📂 Banner Components structure
+
+```
+src/components/banner/
+├── Banner.jsx # Componente principal
+├── BannerClock.jsx # Reloj en tiempo real
+└── BannerWeather.jsx # Widget de clima
+```
+
+#### 🎨 Banner Features
+
+- **Fully customizable** – colors, sizes, and alignment
+- **Supports background images** with optional overlays
+- **Grid system** for positioning content elements (left, center, right)
+- **Prop type validation** using PropTypes
+- **Completely responsive**
+
+#### 💡 How to use it:
+
+```jsx
+import Banner from "./components/banner/Banner";
+import BannerClock from "./components/banner/BannerClock";
+import BannerWeather from "./components/banner/BannerWeather";
+
+<Banner
+  title="Dashboard Principal"
+  subtitle="Bienvenido al sistema"
+  backgroundColor="bg-blue-600"
+  height="h-48"
+  components={[
+    { element: <BannerClock />, align: "left" },
+    { element: <BannerWeather />, align: "right" }
+  ]}
+/>
+
+⚡ Components included:
+- Banner Clock: A digital clock that automatically updates the time.
+- Banner Weather: A weather information widget ready for API connection.
+```
