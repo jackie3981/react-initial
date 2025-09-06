@@ -1,0 +1,133 @@
+*** REACT INIT SETUP ***
+
+- Install node
+- npm create vite@latest [project-name] -- --template react
+	This will create a folder with the project name if this doesn't exist, if exist, it will create the project iside that forlder
+   	The first -- tells the npm command:
+     	“Stop parsing arguments for npm itself — everything after this belongs to the command I’m running.”
+- cd [project-name]
+- npm install
+
+[REACT INSTALLED WITH VITE]
+
+INSTALLING COMPONENTS
+- Tailwind CSS using vite
+	npm install -D tailwindcss @tailwindcss/vite
+	vite.config.ts file
+		import { defineConfig } from 'vite'
+		import tailwindcss from '@tailwindcss/vite'  <-- add this line
+		export default defineConfig({
+		  plugins: [
+		    tailwindcss(), <-- add this line
+		  ],
+		})
+	CSS file
+		@import "tailwindcss"; <-- (you can add this line to your main css file to used in your whole project)
+	include this .css file in your file .jsx
+
+	Testing tailwindcss, replace app.jsx with this code.  You should be able to see the letters red and bold.
+	function App() {
+		return (
+			<>
+			<div className="text-4xl font-bold text-red-500">
+				Tailwind is working!
+			</div>
+			<TestRequest />
+			</>
+		);
+	}
+
+- ESLINT is installed with the React version, there is no need to install it (help correcting errors on the code, and some of them can be fixed with the command)
+- PRETTIER (help formatting the code)
+	npm install -D prettier
+	Then create a file ".prettierrc.cjs" on the project root, with this code:
+		module.exports = {
+		  semi: true,          // force semi colon ;
+		  singleQuote: false,  // use doule quote "
+		  tabWidth: 2,         // tab space
+		  trailingComma: "es5", // trailing coma at the of objects/arrays
+		  printWidth: 80,      // max character per line
+		  endOfLine: "auto",   // keep EOL according to the OS
+		};
+	Create ".prettierignore" on the project root, with this code:
+		node_modules
+		dist
+		*.html
+	Use this command to format all files in your project
+		npx prettier --write .
+
+		If you add this line to your package.json
+			"scripts": {
+			 	"format": "prettier --write ."
+			}
+		you can use this command instead: npm run format
+
+	npm install -D eslint-config-prettier eslint-plugin-prettier
+	add these lines to your "eslint.config.js" file:
+		export default defineConfig([
+		  globalIgnores(["dist", "**/*.test.js", "**/__mocks__"]),
+		  {
+		    files: ["**/*.{js,mjs,cjs,jsx}"],
+		    extends: [
+		      ...
+		      prettier,
+		    ],
+		    plugins: {
+		      prettier: pluginPrettier,
+		    },
+		    ...
+		    rules: {
+		      ...
+		      semi: ["error", "always"],
+		      "prettier/prettier": "error",
+		    },
+		  },
+		]);
+
+Axios (HTTP request) and React Hook Form (optimized forms)
+	npm install react-hook-form axios
+	AXIOS
+	Create this file "axios.js" inside "src/lib/" (if lib doesn't exist, create the folder) and copy this code inside:
+		src/lib/axios.js (empty SETUP)
+		import axios from "axios";
+
+		const api = axios.create({
+		//   baseURL: "https://your-api.com", // Replace this line with your url
+		});
+		export default api;
+
+		How to test it?
+		Create this file(Component) on this folder src/components/TestRequest.jsx and copy this code inside
+			import { useEffect } from 'react';
+			import api from '../lib/axios';
+
+			export default function TestRequest() {
+			useEffect(() => {
+				api.get('https://jsonplaceholder.typicode.com/todos/1')
+				.then((response) => console.log(response.data))
+				.catch((error) => console.error(error));
+			}, []);
+
+			return <p>Check the console on the browser (F12).</p>;
+			}
+		Add the component to src/App.jsx (you can delete all the code inside this fike and paste this new one)
+			import TestRequest from './components/TestRequest';
+
+			function App() {
+			return <TestRequest />;
+			}
+			export default App;
+		Run the proyect, on the browser open the console and you will able to see and object over there
+	REACT HOOK FORMS
+		the file is attached into the proyect on this path ./components/FormExample.jsx (component)
+		this file validate the form and send also the data to the console.
+		add the component to App.jsx in the return part.
+			 <FormExample />
+		
+		Run the project, try to send an empty form, then try to send the form with some text. Check the console.
+
+Proptyes
+	npm install prop-types
+
+Predefined Icons
+	npm install lucide-react
