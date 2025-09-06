@@ -63,7 +63,7 @@ Everything functional and configured
 - Modular component structure
 - Usage examples included
 
-### 🆕 Added Banner Components
+### Added Banner Components
 
 ### 📋 Current Status - Version 1.0
 
@@ -123,4 +123,79 @@ import BannerWeather from "./components/banner/BannerWeather";
 ⚡ Components included:
 - Banner Clock: A digital clock that automatically updates the time.
 - Banner Weather: A weather information widget ready for API connection.
+```
+
+### 🆕 Latest Updates - Banner System v2
+
+#### 🎯 Enhanced Banner Component with Carousel
+
+**New Features:**
+
+- ✅ **Full carousel/slideshow system** with auto-play
+- ✅ **Navigation controls** (arrows + indicators)
+- ✅ **Flexible text system**: fixed or per-slide text
+- ✅ **Configurable transition** timing and effects
+- ✅ **Improved accessibility** with proper ARIA labels
+
+#### 📂 Updated Component Structure
+
+```
+src/components/
+├── banner/
+│ ├── Banner.jsx # Main carousel container
+│ ├── BannerControls.jsx # Navigation arrows & indicators
+│ └── BannerSlide.jsx # Individual slide component
+├── clock/
+│ └── Clock.jsx # Reusable clock component
+├── weather/
+│ └── Weather.jsx # Reusable weather component
+└── menu/
+├── Menu.jsx
+├── MenuItem.jsx
+└── SubMenu.jsx
+```
+
+#### 🎨 Banner Usage Example
+
+```jsx
+import Banner from "./components/banner/Banner";
+import Clock from "./components/clock/Clock";
+import Weather from "./components/weather/Weather";
+
+// With multiple slides
+<Banner
+  slides={[
+    { image: "/slide1.jpg", title: "Welcome", subtitle: "First slide" },
+    { image: "/slide2.jpg", title: "Features", subtitle: "Second slide" }
+  ]}
+  slideInterval={5000}
+  showControls={true}
+  showIndicators={true}
+  components={[
+    { element: <Clock />, align: "left" },
+    { element: <Weather />, align: "right" }
+  ]}
+/>
+
+// With fixed text
+<Banner
+  slides={[{ image: "/hero.jpg" }]}
+  textFixed={true}
+  title="Fixed Title"
+  subtitle="This text appears on all slides"
+/>
+
+🔧 Component Features
+- Banner: Main container with auto-rotation, configurable timing
+- BannerControls: Customizable navigation arrows and indicators
+- BannerSlide: Individual slide with transition effects
+- Clock: Reusable time component (can be used anywhere)
+- Weather: Reusable weather component (API-ready structure)
+
+🚀 Next Planned Features
+- Real API integration for Weather component
+- Slide transition animations
+- Responsive breakpoint configurations
+- Accessibility improvements
+- Theme system support
 ```

@@ -1,4 +1,4 @@
-export default function BannerWeather() {
+export default function Weather() {
   // Datos de ejemplo
   const temperature = "25°C";
   const condition = "Sunny";

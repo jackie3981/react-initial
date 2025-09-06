@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 
-export default function BannerClock() {
+export default function Clock() {
   const [time, setTime] = useState(new Date());
 
   useEffect(() => {

@@ -4,8 +4,8 @@ import FormExample from "./components/FormExample";
 import Menu from "./components/menu/Menu";
 import { Home, Settings, User, Lock } from "lucide-react";
 import Banner from "./components/banner/Banner";
-import BannerClock from "./components/banner/BannerClock";
-import BannerWeather from "./components/banner/BannerWeather";
+import Clock from "./components/clock/Clock";
+import Weather from "./components/weather/Weather";
 
 const menuItems = [
   { id: "home", label: "Home", path: "/", icon: <Home size={18} /> },
@@ -40,22 +40,37 @@ function App() {
   return (
     <>
       <Banner
-        title="Welcome to my project"
-        subtitle="React + Vite + Tailwind"
-        backgroundImage="/vite.svg"
-        overlay={true}
-        textAlign="center"
-        components={[
-          { element: <BannerClock />, align: "left" },
-          { element: <BannerWeather />, align: "right" },
+        slides={[
+          // {
+          //   image: "/vite.svg", // imagen local en /public
+          //   title: "Bienvenido a mi Proyecto",
+          //   subtitle: "React + Vite + Tailwind",
+          // },
           {
-            element: (
-              <button className="bg-white text-blue-500 px-4 py-2 rounded">
-                Extra
-              </button>
-            ),
-            align: "center",
+            image: "https://picsum.photos/id/1015/1200/400",
+            title: "Segundo Slide",
+            subtitle: "Texto dinámico para el slide 2",
           },
+          {
+            image: "https://picsum.photos/id/1016/1200/400",
+            title: "Tercer Slide",
+            subtitle: "Aquí podría ir un mensaje distinto",
+          },
+        ]}
+        textFixed={false} // el texto cambia según cada slide
+        title="Bienvenido a mi Proyecto"
+        subtitle="Usando Tailwind CSS"
+        textAlign="center"
+        backgroundColor="black"
+        textColor="text-white"
+        height="h-64"
+        overlay={true}
+        slideInterval={4000} // cambia cada 4s
+        showControls={true}
+        showIndicators={true}
+        components={[
+          { element: <Weather />, align: "left" },
+          { element: <Clock />, align: "right" },
         ]}
         className="mb-6"
       />
