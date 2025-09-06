@@ -2,88 +2,98 @@
 
 ## 📚 Table of Contents
 
-```
-🚀 Features
-🏗️ Project Structure
-📦 Main Dependencies
-🛠️ Development Tools
-🎯 Component Overview
-⚡ Available Scripts
-📋 Current Status
-🚀 Planned Features
-📖 Usage Examples
-```
+- [🚀 Features](#-features)
+- [🏗️ Project Structure](#-project-structure)
+- [📦 Main Dependencies](#-main-dependencies)
+- [🛠️ Development Tools](#-development-tools)
+- [🎯 Component Overview](#-component-overview)
+- [⚡ Available Scripts](#-available-scripts)
+- [📋 Current Status](#-current-status)
+- [🚀 Planned Features](#-planned-features)
+- [📖 Usage Examples](#-usage-examples)
 
-## 🚀 Features
+## 🚀 Features {#-features}
+
+[⬆️ Back to top](#-table-of-contents)
 
 This is a React project template using Vite, including essential configurations and base components with a modern, scalable architecture.
 
-## 🏗️ Project Structure
+## 🏗️ Project Structure {#-project-structure}
+
+[⬆️ Back to top](#-table-of-contents)
 
 ### 📁 Organized Folder Architecture
 
 ```
 src/components/
 ├── clock/
-│   └── Clock.jsx                 # Standalone clock component
-├── header/                       # All header-related components
-│   ├── banner/                   # Banner carousel system
-│   │   ├── Banner.jsx
-│   │   ├── BannerControls.jsx
-│   │   └── BannerSlide.jsx
-│   ├── ctas/                     # Call-to-action components
-│   ├── menu/                     # Navigation menu system
-│   │   ├── Menu.jsx
-│   │   ├── MenuItem.jsx
-│   │   └── SubMenu.jsx
-│   └── topbar/                   # Top bar components
+│ └── Clock.jsx # Standalone clock component
+├── header/ # All header-related components
+│ ├── banner/ # Banner carousel system
+│ │ ├── Banner.jsx
+│ │ ├── BannerControls.jsx
+│ │ └── BannerSlide.jsx
+│ ├── ctas/ # Call-to-action components
+│ ├── menu/ # Navigation menu system
+│ │ ├── Menu.jsx
+│ │ ├── MenuItem.jsx
+│ │ └── SubMenu.jsx
+│ └── topbar/ # Top bar components
 ├── weather/
-│   └── Weather.jsx               # Standalone weather component
-├── FormExample.jsx               # Form examples
-└── TestRequest.jsx               # API test components
+│ └── Weather.jsx # Standalone weather component
+├── FormExample.jsx # Form examples
+└── TestRequest.jsx # API test components
 ```
 
 ### Benefits of this structure:
 
-✅ Logical grouping by functionality area
-✅ Better scalability for future features
-✅ Clear separation of concerns
-✅ Easier maintenance and team collaboration
-✅ Ready for complex applications
+✅ **Logical grouping** by functionality area  
+✅ **Better scalability** for future features  
+✅ **Clear separation** of concerns  
+✅ **Easier maintenance** and team collaboration  
+✅ **Ready for complex applications**
 
-## 📦 Main Dependencies
+## 📦 Main Dependencies {#-main-dependencies}
 
-- React 19 + Vite - Framework and bundler
-- Tailwind CSS 4 - Styling with full configuration
-- Axios - HTTP client for APIs
-- React Hook Form - Form handling
-- Lucide React - Icons
-- PropTypes - Prop validation
+[⬆️ Back to top](#-table-of-contents)
 
-## 🛠️ Development Tools
+- **React 19** + **Vite** - Framework and bundler
+- **Tailwind CSS 4** - Styling with full configuration
+- **Axios** - HTTP client for APIs
+- **React Hook Form** - Form handling
+- **Lucide React** - Icons
+- **PropTypes** - Prop validation
 
-- ESLint - Linting with custom configuration
-- Prettier - Code formatting
-- TypeScript types - Typings for React
+## 🛠️ Development Tools {#-development-tools}
 
-## 🎯 Component Overview
+[⬆️ Back to top](#-table-of-contents)
+
+- **ESLint** - Linting with custom configuration
+- **Prettier** - Code formatting
+- **TypeScript types** - Typings for React
+
+## 🎯 Component Overview {#-component-overview}
+
+[⬆️ Back to top](#-table-of-contents)
 
 ### Header Components
 
-- Banner System - Full carousel/slideshow with auto-play, navigation controls, and configurable transitions
-- Menu System - Modular navigation component with horizontal/vertical orientation support
-- Topbar - Top bar components (ready for implementation)
+- **Banner System** - Full carousel/slideshow with auto-play, navigation controls, and configurable transitions
+- **Menu System** - Modular navigation component with horizontal/vertical orientation support
+- **Topbar** - Top bar components (ready for implementation)
 
 ### Utility Components
 
-- Clock - Reusable time component with real-time updates
-- Weather - Weather component with API-ready structure
-- FormExample - Form handling examples
-- TestRequest - API testing components
+- **Clock** - Reusable time component with real-time updates
+- **Weather** - Weather component with API-ready structure
+- **FormExample** - Form handling examples
+- **TestRequest** - API testing components
 
-## ⚡ Available Scripts
+## ⚡ Available Scripts {#-available-scripts}
 
-```
+[⬆️ Back to top](#-table-of-contents)
+
+```bash
 npm run dev       # Development
 npm run build     # Production build
 npm run lint      # Linting
@@ -91,9 +101,11 @@ npm run format    # Code formatting
 npm run preview   # Production preview
 ```
 
-## 📋 Current Status
+## 📋 Current Status {#-current-status}
 
-### ✅ Everything Functional and Configured
+[⬆️ Back to top](#-table-of-contents)
+
+✅ Everything Functional and Configured
 
 - Build works without errors
 - Tailwind CSS integrated and working
@@ -101,7 +113,7 @@ npm run preview   # Production preview
 - Modular component structure
 - Usage examples included
 
-### ✅ Stable Features Implemented:
+✅ Stable Features Implemented:
 
 - Fully functional banner carousel system
 - Real-time clock component
@@ -111,7 +123,9 @@ npm run preview   # Production preview
 - Prop validation using PropTypes
 - Responsive design
 
-## 🚀 Planned Features
+## 🚀 Planned Features {#-planned-features}
+
+[⬆️ Back to top](#-table-of-contents)
 
 ### Short-term
 
@@ -134,7 +148,9 @@ npm run preview   # Production preview
 - API caching strategies
 - Performance optimization
 
-## 📖 Usage Examples
+### 📖 Usage Examples {#-usage-examples}
+
+[⬆️ Back to top](#-table-of-contents)
 
 ### Banner Carousel System
 
