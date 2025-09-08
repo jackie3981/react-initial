@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import PropTypes from "prop-types";
 import BannerSlide from "./BannerSlide";
 import BannerControls from "./BannerControls";
@@ -21,17 +21,25 @@ export default function Banner({
   showControls = true,
   showIndicators = true,
   className = "",
+  transitionType = "fade",
+  autoplay = true, // 👈 nueva prop
 }) {
   const [currentSlide, setCurrentSlide] = useState(0);
+  const [isPaused, setIsPaused] = useState(false); // 👈 nuevo estado
+  const timerRef = useRef(null);
 
   // autoplay
   useEffect(() => {
-    if (slides.length <= 1) return;
-    const timer = setInterval(() => {
-      setCurrentSlide((prev) => (prev + 1) % slides.length);
-    }, slideInterval);
-    return () => clearInterval(timer);
-  }, [slides.length, slideInterval]);
+    if (!autoplay || slides.length <= 1) return;
+
+    if (!isPaused) {
+      timerRef.current = setInterval(() => {
+        setCurrentSlide((prev) => (prev + 1) % slides.length);
+      }, slideInterval);
+    }
+
+    return () => clearInterval(timerRef.current);
+  }, [slides.length, slideInterval, autoplay, isPaused]);
 
   // Handlers
   const goToPrev = () =>
@@ -51,8 +59,17 @@ export default function Banner({
     <div
       className={`relative overflow-hidden ${height} ${className}`}
       style={{ backgroundColor }}
+      onMouseEnter={() => setIsPaused(true)} // pause autoplay
+      onMouseLeave={() => setIsPaused(false)} // resume autoplay
+      role="region"
+      aria-label="Banner carousel"
+      tabIndex={0} // allow focus for keyboard navigation
+      onKeyDown={(e) => {
+        if (e.key === "ArrowLeft") goToPrev();
+        if (e.key === "ArrowRight") goToNext();
+      }}
     >
-      {/* Active Slide */}
+      {/* Slides */}
       {slides.map((slide, index) => (
         <BannerSlide
           key={index}
@@ -64,6 +81,7 @@ export default function Banner({
           textColor={textColor}
           textJustify={textJustify}
           isActive={index === currentSlide}
+          transitionType={transitionType}
         />
       ))}
 
@@ -136,4 +154,10 @@ Banner.propTypes = {
   showControls: PropTypes.bool,
   showIndicators: PropTypes.bool,
   className: PropTypes.string,
+  transitionType: PropTypes.oneOf([
+    "fade",
+    "slide-horizontal",
+    "slide-vertical",
+  ]),
+  autoplay: PropTypes.bool, // 👈 nueva prop
 };
